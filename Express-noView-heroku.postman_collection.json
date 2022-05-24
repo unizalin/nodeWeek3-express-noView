@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "c34c62b3-82c2-4648-8f63-800b2338d759",
+		"name": "Express-noView-heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "取得貼文",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://serene-dusk-12678.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"serene-dusk-12678",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增貼文",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\": \"王小明4\",\n\"content\": \"小明你好啊2\",\n\"image\" : \"https://picsum.photos/400/400\",\n\"tags\": \"person\",\n\"type\": \"group\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://serene-dusk-12678.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"serene-dusk-12678",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單一",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://serene-dusk-12678.herokuapp.com/posts/628984082d8d1f4dcb4b2a7e",
+					"protocol": "https",
+					"host": [
+						"serene-dusk-12678",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"628984082d8d1f4dcb4b2a7e"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "626bb3f94177029c1e2e15bf\n",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除全部",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://serene-dusk-12678.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"serene-dusk-12678",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯單一",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"content\": \"小明你好啊213\",\n\"image\": \"https://picsum.photos/400/400\",\n\"like\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://serene-dusk-12678.herokuapp.com/posts/62898a9fd0ef436e4b6377c5",
+					"protocol": "https",
+					"host": [
+						"serene-dusk-12678",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"62898a9fd0ef436e4b6377c5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
