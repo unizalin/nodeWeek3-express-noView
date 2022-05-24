@@ -11,11 +11,28 @@ router.get('/',async function(req, res, next) {
 });
 
 router.post('/',async function(req, res, next) {
-  const newPost = await Post.create(req.body)
-  res.status(200).json({
-    status: "success",
-    newPost
-  })
+  try {
+    const { name, content, image, likes ,type,tags} = req.body;
+    let dataPost = {name, content, image, likes ,type,tags};
+    if (!dataPost.content) {
+      res.status(400).json({
+        status: "false",
+        message: "內容不能為空"
+      })
+    } else {
+      const newPost = await Post.create(dataPost);
+      res.status(200).json({
+        status: "true",
+        newPost
+      })
+    }
+  } catch (error) {
+    res.status(400).json({
+      status: "false",
+      message: error
+    })  
+  }
+  
 });
 
 router.delete('/',async function(req, res, next) {
